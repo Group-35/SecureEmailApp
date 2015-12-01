@@ -4,4 +4,12 @@ Home is here.
   Email: <%= current_user.email %>
   Username: <%= current_user.username %>
   Firstname: <%= current_user.firstname %>
+
+  emails: 
+  <% if @emails.nil? %>
+    "No emails!"
+  <% else %>
+    <%= @emails.count %>
+  <% end %>
+
 <% end %>

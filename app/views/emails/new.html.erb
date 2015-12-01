@@ -1,0 +1,15 @@
+<%= form_for @email, url: { action: "create" } do |f| %>
+
+  <div class="field">
+    <%= f.label "To (username)" %><br />
+    <%= f.text_field :to_user %>
+  </div>
+
+  <div class="field">
+    <%= f.label "Message" %><br />
+    <%= f.text_area :data,  size: "50x10" %>
+  </div>
+
+  <%= f.submit "Send" %>
+
+<% end %>
