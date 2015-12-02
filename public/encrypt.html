@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Encryption Prototype</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+  <script language="Javascript" src="rsa.js" type="text/javascript"></script>
+  <script language="Javascript" src="aes-enc.js" type="text/javascript"></script>
+  <script language="Javascript" src="base64.js" type="text/javascript"></script>
+  <script language="Javascript" src="mouse.js" type="text/javascript"></script>
+  <script language="Javascript" src="PGencode.js" type="text/javascript"></script>
+  <script language="Javascript" src="sha1.js" type="text/javascript"></script>
+  <script language="Javascript" src="PGpubkey.js" type="text/javascript"></script>
+
+  <script language="Javascript" type="text/javascript">
+
+    var keytyp;
+    var keyid;
+    var pubkey;
+
+    function load()
+    {
+     document.enc_msg.pkey.value=pubkey;
+     document.enc_msg.keyid.value=keyid;
+     if(keytyp == 0) document.enc_msg.pktype.value='RSA';
+     if(keytyp == 1) document.enc_msg.pktype.value='ELGAMAL';
+    }
+
+    function encrypt()
+    {
+     pubkey=document.enc_msg.pubKey.value;
+
+     var pu=new getPublicKey(pubkey);
+     if(pu.vers == -1) return;
+
+     keyid = pu.keyid;
+     keytyp = 0;
+
+     //console.log(keyid + " " + pubkey);
+
+     pubkey = pu.pkey.replace(/\n/g,'');
+
+     var text=document.enc_msg.msg.value+'\r\n';
+
+     document.enc_msg.msg.value=doEncrypt(keyid, keytyp, pubkey, text);
+    }
+
+
+
+  </script>
+
+</head>
+<body ng-app="ProtoEmail" onload="load()">
+  <div class="container">
+    <div ng-include="'assets/nav/_nav.html'"></div>
+    <h1>ProtoEmail</h1>
+    <div class="jumbotron" style="margin-top: 50px;">
+      <ui-view>
+
+          <h2>Encryption Prototype</h2><br>
+
+          <form name="enc_msg" action="javascript:encrypt()">
+
+            <textarea name="pubKey" rows=10 cols=80>Public Key goes here</textarea><br>
+
+            Message for encryption:<br>
+            <textarea name="msg" rows=10 cols=80>Message to be encrypted goes here.</textarea><br>
+            <input type=submit value="Encrypt">
+
+          </form>
+
+      </ui-view>
+    </div>
+
+  </div>
+</body>
+</html>
