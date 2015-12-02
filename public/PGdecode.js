@@ -92,7 +92,7 @@ function GPGdecode(key, ciphertext)
 
 // -----------------------------------------------------------
 
-function doDecrypt(p,q,d,u,text)
+function doDecrypt(p,q,d,u,text, passPhrase)
 {
   var i=0, len, r='';
 
@@ -275,13 +275,13 @@ function doDecrypt(p,q,d,u,text)
          
           if(s2k==0)
           {
-            pass = window.prompt("Password:", "");
+            pass = passPhrase
 
             if(hash == 2) key = str_sha1(pass);
           }
           else if(s2k==1)
           {
-            pass = s.substr(i, 8) + window.prompt("Password:", "");;
+            pass = s.substr(i, 8) + passPhrase;
 
             r+='salt:'+s.charCodeAt(i++)+','+s.charCodeAt(i++)+','+s.charCodeAt(i++)+','+s.charCodeAt(i++)+','
                       +s.charCodeAt(i++)+','+s.charCodeAt(i++)+','+s.charCodeAt(i++)+','+s.charCodeAt(i++);
@@ -290,7 +290,7 @@ function doDecrypt(p,q,d,u,text)
           }
           else if(s2k==3)
           {
-            pass = s.substr(i, 8) + window.prompt("Password:", "");
+            pass = s.substr(i, 8) + passPhrase
 
             r+='salt:'+s.charCodeAt(i++)+','+s.charCodeAt(i++)+','+s.charCodeAt(i++)+','+s.charCodeAt(i++)+','
                       +s.charCodeAt(i++)+','+s.charCodeAt(i++)+','+s.charCodeAt(i++)+','+s.charCodeAt(i++);
@@ -490,6 +490,7 @@ function doDecrypt(p,q,d,u,text)
      r+='File:'+name+'\nDate:'+date+'\n';
      text=s.substr(i,len-l-6); 
      r+='---Start of literal data---\n'+text+'\n---\n';
+     r = text;
    }
    else if(tag==12)   // user id
    {

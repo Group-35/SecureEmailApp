@@ -49,6 +49,7 @@ function rnTimer()
  window.setTimeout("rnTimer()",randomByte()|128);
 }
 
+
 // rnTimer() and mouseMoveCollect() are started on page load.
 
 rnTimer();
