@@ -9,7 +9,13 @@ Home is here.
   <% if @emails.nil? %>
     "No emails!"
   <% else %>
-    <%= @emails.count %>
+    <% if @email.count == 1 %>
+      <%= @email.data %>
+    <% else %>
+      <% @emails.each do |e| %>
+        <p><%= e.data %></p>
+      <% end %>
+    <% end %>
   <% end %>
 
 <% end %>
