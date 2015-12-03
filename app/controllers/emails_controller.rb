@@ -18,5 +18,10 @@ class EmailsController < ApplicationController
     emails = Email.where(to_user: current_user.id)
     @email = emails.first
   end
+
+  def show_email
+    @email = Email.find(params[:id])
+    render 'show_email'
+  end
   
 end

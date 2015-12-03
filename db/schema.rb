@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151203160937) do
+ActiveRecord::Schema.define(version: 20151203163905) do
 
   create_table "contacts", force: :cascade do |t|
     t.integer "belong"
@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 20151203160937) do
     t.text "private_key"
   end
 
-  create_table "spam", force: :cascade do |t|
+  create_table "spams", force: :cascade do |t|
     t.integer "belong_to"
     t.integer "bad_user"
   end

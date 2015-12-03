@@ -14,16 +14,16 @@
           <% else %>
               <% @emails = @emails.reverse %>
               <% @emails.each do |e| %>
-              <tr>
-                <% if e.read ==1 %>
+                <tr>
+                  <% if e.read ==1 %>
                     <tr class="danger">
-                <% else %>
+                  <% else %>
                     <tr class="success">
-                <% end %>
-                <% @from_user = User.find(e.from_user) %>
-                <td><%= "#{@from_user.firstname} #{@from_user.lastname}" %></td>  <td><%= link_to e.created_at, "/emails/#{e.id}" %></td> 
+                  <% end %>
+                  <% @from_user = User.find(e.from_user) %>
+                  <td><%= "#{@from_user.firstname} #{@from_user.lastname}" %></td>  <td><%= link_to e.created_at || "blank", "/emails/show/#{e.id}" %></td> 
              
-              </tr>
+                </tr>
             
           <% end %>
         <% end %>

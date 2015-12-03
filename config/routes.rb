@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
   root 'home#index'
 
-  get "emails/show/:id" => 'emails#show'
+  get "emails/show/:id" => 'emails#show_email'
 
   resources :emails
   resources :contacts
