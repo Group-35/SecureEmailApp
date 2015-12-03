@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   devise_for :users
   root 'home#index'
 
+  get "emails/spam" => 'emails#show_spam'
+  get "emails/spam/new" => 'email#new_spam'
+
   resources :emails
   resources :contacts
   # The priority is based upon order of creation: first created -> highest priority.
