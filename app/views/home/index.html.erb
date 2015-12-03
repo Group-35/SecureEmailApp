@@ -14,7 +14,7 @@
       <%= @emails.data %>
     <% else %>
       <% @emails.each do |e| %>
-        <p><%= e.data %></p>
+        <p>Email from:<%=e.from_user%><br><%= e.data %></p>
       <% end %>
     <% end %>
   <% end %>
