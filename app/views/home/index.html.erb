@@ -27,7 +27,14 @@
                 <% else %>
                     <tr class="success">
                 <% end %>
-                <td><%=e.from_user%></td>  <td><%= e.created_at %></td>
+                <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">Simple collapsible
+                <td><%=e.from_user%></td>  <td><%= e.created_at %></td> 
+              </button>
+              <td>
+                <div class="col-md-9 collapse" id="demo"  style="height:1000px;width:750px;font:16px/26px Georgia, Garamond, Serif;overflow:auto;">
+                <%= e.data %> this is sample text
+              </div>
+              </td>
               </tr>
             
           <% end %>
@@ -37,4 +44,5 @@
       </div>
   <div class="col-md-3">
 </div>
+
 
