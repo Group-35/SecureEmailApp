@@ -30,7 +30,7 @@
 
           <% else %>
             <% if @emails.count == 1 %>
-              <%= %> <%= @emails.data %>
+              <%= @emails.from_user %> <%= @emails.data %>
             <% else %>
               <% @emails.reverse %>
               <% @emails.each do |e| %>
