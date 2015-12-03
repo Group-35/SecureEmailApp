@@ -4,7 +4,7 @@ class ContactsController < ApplicationController
 
   def index
     @contacts = Contact.where(belong: current_user.id)
-    @contacts = Contact.find_all_by_id(@contacts)
+    @contacts = Contact.find(@contacts)
   end
 
   def new
