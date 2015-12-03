@@ -1,10 +1,11 @@
-Home is here. 
 
+<head><h2>Current User: </h2>
 <% if user_signed_in? %>
   Email: <%= current_user.email %>
   Username: <%= current_user.username %>
   Firstname: <%= current_user.firstname %>
-
+</head>
+<body>
   emails: 
   <% if @emails.nil? %>
     "No emails!"
@@ -19,3 +20,4 @@ Home is here.
   <% end %>
 
 <% end %>
+</body>
