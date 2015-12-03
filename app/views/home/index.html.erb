@@ -1,23 +1,72 @@
-Home is here. 
 
-<% if user_signed_in? %>
-  Email: <%= current_user.email %>
-  Username: <%= current_user.username %>
-  Firstname: <%= current_user.firstname %>
+<script language="Javascript" type="text/Javascript">
+  window.onload = function(){
+    $(".jumbotron").attr('class', 'newClass');
+  }
+</script>
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Securemail</a>
+    </div>
+    <div>
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="#">Contacts</a></li>
+        <li><a href="#">Spam</a></li>
+        <li><a href="/emails/new">Compose Message</a></li> 
+        
+      </ul>
+       <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Settings</a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
-  emails: 
-  <% if @emails.nil? %>
+  
+<div class="row">
+<div class="col-md-2"; data-spy="affix"; style="height:100%;width:350px;overflow:auto;">
+      <table class="table table-hover";>
+    <thead>
+      <tr>
+        <th>Contact</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <tr class="success">
+        <td>John</td>
+        <td>jtouchdown@knights.ucf.edu</td>
+      </tr>
+      <tr>
+        <tr class="danger">
+        <td>July</td>
+        <td>hottestmonth@knights.ucf.edu</td>
+      </tr>
+      <% if @emails.nil? %>
     "No emails!"
   <% else %>
     <% if @emails.count == 1 %>
-      <%= @emails.data %>
+      <%= %> <%= @emails.data %>
     <% else %>
+      <% @emails.reverse %>
       <% @emails.each do |e| %>
-
-        <p><%= e.data %></p>
-      
+        <td><%=e.from_user%></td>  <td><%= e.created_at %></td>
       <% end %>
     <% end %>
   <% end %>
 
 <% end %>
+    </tbody>
+  </table>
+    </div>
+<div class="col-md-3">
+</div>
+    <div class="col-md-9" style="height:1000px;width:750px;font:16px/26px Georgia, Garamond, Serif;overflow:auto;">This is where the email will be read. Test testetestetsetsetsetsetsetsetsetsetsetaetkjaherklajhdkfashdkfhadkfhakdhfkahdflkahdklashdfka jhdfka shdfkajhkasdhfkajdhfklasjdhflkasjdhflakjdhfkadhkadhlkahdkdjhkdhfk asdhfk ahdfk adhsfk ajhd akljdhakdhakjehfakldjhf ak fhask hasdkfh akldf hasldkf hadlk fhasdk ahdk has kdsah askdfh askld ahsdkf ahdkf ahsd kashd kasjdhf klasdh askldhf akldjhfaskldh askd adsklfj a;ldkjf ladj ladj flakjd aljd alsdkjf alsdjf aldkfj alsdj al;sdfjl;a sfdja sldj asld jal jasldjaldk jadlf jasdlfajsdfl asjfla sdj alsdfj aslf kjadlf ja dlkja sdlf kajdl ajsdf ;laksdj a;ldk jas;dlfkja;dl kjasdl ajsfl asjdflaskd asjdlaskd jalsdf ajsdlf kjdlfkadjf la;sdfkj a;sdlj a;lsd jasd;l jas;dfl ajsdl fajsdfl asdf lasjdf laskfd jals;fd jas;dfl ajdlf adjf laskjdf alsdkf jasldf ajdl;fkj dlsf adlf adlskfjalsdjl adfalsdf ljadfal;d kjfald jfasldf jas;dlf ja;dlf jasdl;fjdhfkadhkadhlkahdkdjhkdhfk asdhfk ahdfk adhsfk ajhd akljdhakdhakjehfakldjhf ak fhask hasdkfh akldf hasldkf hadlk fhasdk ahdk has kdsah askdfh askld ahsdkf ahdkf ahsd kashd kasjdhf klasdh askldhf akldjhfaskldh askd adsklfj a;ldkjf ladj ladj flakjd aljd alsdkjf alsdjf aldkfj alsdj al;sdfjl;a sfdja sldj asld jal jasldjaldk jadlf jasdlfajsdfl asjfla sdj alsdfj aslf kjadlf ja dlkja sdlf kajdl ajsdf ;laksdj a;ldk jas;dlfkja;dl kjasdl ajsfl asjdflaskd asjdlaskd jalsdf ajsdlf kjdlfkadjf la;sdfkj a;sdlj a;lsd jasd;l jas;dfl ajsdl fajsdfl asdf lasjdf laskfd jals;fd jas;dfl ajdlf adjf laskjdf alsdkf jasldf ajdl;fkj dlsf adlf adlskfjalsdjl adfalsdf ljadfal;d kjfald jfasldf jas;dlf ja;dlf jasdl;f jas;dlf jasdl;f kjasdl; fjadsfl asdfjdhfkadhkadhlkahdkdjhkdhfk asdhfk ahdfk adhsfk ajhd akljdhakdhakjehfakldjhf ak fhask hasdkfh akldf hasldkf hadlk fhasdk ahdk has kdsah askdfh askld ahsdkf ahdkf ahsd kashd kasjdhf klasdh askldhf akldjhfaskldh askd adsklfj a;ldkjf ladj ladj flakjd aljd alsdkjf alsdjf aldkfj alsdj al;sdfjl;a sfdja sldj asld jal jasldjaldk jadlf jasdlfajsdfl asjfla sdj alsdfj aslf kjadlf ja dlkja sdlf kajdl ajsdf ;laksdj a;ldk jas;dlfkja;dl kjasdl ajsfl asjdflaskd asjdlaskd jalsdf ajsdlf kjdlfkadjf la;sdfkj a;sdlj a;lsd jasd;l jas;dfl ajsdl fajsdfl asdf lasjdf laskfd jals;fd jas;dfl ajdlf adjf laskjdf alsdkf jasldf ajdl;fkj dlsf adlf adlskfjalsdjl adfalsdf ljadfal;d kjfald jfasldf jas;dlf ja;dlf jasdl;f jas;dlf jasdl;f kjasdl; fjadsfl asdfjdhfkadhkadhlkahdkdjhkdhfk asdhfk ahdfk adhsfk ajhd akljdhakdhakjehfakldjhf ak fhask hasdkfh akldf hasldkf hadlk fhasdk ahdk has kdsah askdfh askld ahsdkf ahdkf ahsd kashd kasjdhf klasdh askldhf akldjhfaskldh askd adsklfj a;ldkjf ladj ladj flakjd aljd alsdkjf alsdjf aldkfj alsdj al;sdfjl;a sfdja sldj asld jal jasldjaldk jadlf jasdlfajsdfl asjfla sdj alsdfj aslf kjadlf ja dlkja sdlf kajdl ajsdf ;laksdj a;ldk jas;dlfkja;dl kjasdl ajsfl asjdflaskd asjdlaskd jalsdf ajsdlf kjdlfkadjf la;sdfkj a;sdlj a;lsd jasd;l jas;dfl ajsdl fajsdfl asdf lasjdf laskfd jals;fd jas;dfl ajdlf adjf laskjdf alsdkf jasldf ajdl;fkj dlsf adlf adlskfjalsdjl adfalsdf ljadfal;d kjfald jfasldf jas;dlf ja;dlf jasdl;f jas;dlf jasdl;f kjasdl; fjadsfl asdf jas;dlf jasdl;f kjasdl; fjadsfl asdf </div>
