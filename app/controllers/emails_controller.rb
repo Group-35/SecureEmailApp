@@ -10,7 +10,7 @@ class EmailsController < ApplicationController
 
     to_user =  User.find_by(username: params[:email][:to_user])
     
-    @email = Email.create(to_user: to_user.id, from_user: current_user.id, data: params[:email][:data])
+    @email = Email.create(to_user: to_user.id, from_user: current_user.id, data: params[:email][:data], created_at: DateTime.now, updated_at: DateTime.now)
     redirect_to :controller => 'home', :action => 'index'
   end
   

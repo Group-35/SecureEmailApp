@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151203012052) do
+ActiveRecord::Schema.define(version: 20151203022418) do
 
   create_table "contacts", force: :cascade do |t|
     t.integer "belong"
@@ -19,10 +19,12 @@ ActiveRecord::Schema.define(version: 20151203012052) do
   end
 
   create_table "emails", force: :cascade do |t|
-    t.string  "data"
-    t.integer "to_user",               null: false
-    t.integer "from_user",             null: false
-    t.integer "read",      default: 0
+    t.string   "data"
+    t.integer  "to_user",                null: false
+    t.integer  "from_user",              null: false
+    t.integer  "read",       default: 0
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "keys", force: :cascade do |t|
