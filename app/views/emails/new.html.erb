@@ -1,3 +1,45 @@
+<script language="Javascript" src="http://localhost:3000/rsa.js" type="text/javascript"></script>
+<script language="Javascript" src="http://localhost:3000/aes-enc.js" type="text/javascript"></script>
+<script language="Javascript" src="http://localhost:3000/base64.js" type="text/javascript"></script>
+<script language="Javascript" src="http://localhost:3000/mouse.js" type="text/javascript"></script>
+<script language="Javascript" src="http://localhost:3000/PGencode.js" type="text/javascript"></script>
+<script language="Javascript" src="http://localhost:3000/sha1.js" type="text/javascript"></script>
+<script language="Javascript" src="http://localhost:3000/PGpubkey.js" type="text/javascript"></script>
+
+<script language="Javascript" type="text/javascript">
+	window.onload = function() {
+		document.getElementById("new_email").commit.disabled = true;
+	};
+</script>
+
+<script language="Javascript" type="text/javascript">
+
+    var keytyp;
+    var keyid;
+    var pubkey;
+
+    function encrypt()
+    {    	
+    	//Fetch public key from server
+	    pubkey = '-----BEGIN PGP PUBLIC KEY BLOCK-----\nVersion: Keybase OpenPGP v2.0.9\n\n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\nJ6gj28GGEWU=\n=Hv1e\n-----END PGP PUBLIC KEY BLOCK-----';
+
+	    var pu=new getPublicKey(pubkey);
+
+	    keyid = pu.keyid;
+	    keytyp = 0;
+
+	    pubkey = pu.pkey.replace(/\n/g,'');
+
+	    var text=document.getElementById('new_email').email_data.value+'\r\n';
+
+	    document.getElementById('new_email').email_data.value = doEncrypt(keyid, keytyp, pubkey, text);
+
+	    document.getElementById("new_email").commit.disabled = false;
+	    document.getElementById("encrypt").disabled = true;
+    }
+</script>
+
+
 <%= form_for @email, url: { action: "create" } do |f| %>
 
   <div class="field">
@@ -9,7 +51,8 @@
     <%= f.label "Message" %><br />
     <%= f.text_area :data,  size: "50x10" %>
   </div>
-
   <%= f.submit "Send" %>
 
 <% end %>
+
+<button onClick="javascript:encrypt();" id="encrypt">Encrypt</button>
