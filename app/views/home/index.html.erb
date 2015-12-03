@@ -13,7 +13,9 @@ Home is here.
       <%= @emails.data %>
     <% else %>
       <% @emails.each do |e| %>
+
         <p><%= e.data %></p>
+      
       <% end %>
     <% end %>
   <% end %>

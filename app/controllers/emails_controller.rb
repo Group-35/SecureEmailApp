@@ -13,8 +13,5 @@ class EmailsController < ApplicationController
     @email = Email.create(to_user: to_user.id, from_user: current_user.id, data: params[:email][:data])
     redirect_to :controller => 'home', :action => 'index'
   end
-
-  def retrieve_email
-  end
   
 end

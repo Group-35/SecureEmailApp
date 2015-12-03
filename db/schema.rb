@@ -11,13 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151201161300) do
+ActiveRecord::Schema.define(version: 20151203012052) do
+
+  create_table "contacts", force: :cascade do |t|
+    t.integer "belong"
+    t.integer "contact"
+  end
 
   create_table "emails", force: :cascade do |t|
     t.string  "data"
     t.integer "to_user",               null: false
     t.integer "from_user",             null: false
     t.integer "read",      default: 0
+  end
+
+  create_table "keys", force: :cascade do |t|
+    t.text "public_key"
+    t.text "private_key"
   end
 
   create_table "users", force: :cascade do |t|
@@ -36,6 +46,8 @@ ActiveRecord::Schema.define(version: 20151201161300) do
     t.string   "username"
     t.string   "firstname"
     t.string   "lastname"
+    t.text     "public_key"
+    t.text     "private_key"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

@@ -1,0 +1,10 @@
+<%= form_for @contact, url: { action: "create" } do |f| %>
+
+  <div class="field">
+    <%= f.label "Contact (username)" %><br />
+    <%= f.text_field :contact %>
+  </div>
+
+  <%= f.submit "Send" %>
+
+<% end %>
