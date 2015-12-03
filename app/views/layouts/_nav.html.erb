@@ -10,14 +10,15 @@
     <div>
       <ul class="nav navbar-nav">
         <li class="active"><a href="#">Home</a></li>
-        <li><a href="/emails/contacts">Contacts</a></li>
+        <li><a href="/contacts">Contacts</a></li>
         <li><a href="/emails/spam">Spam</a></li>
         <li><a href="/emails/new">Compose Message</a></li> 
         
       </ul>
        <ul class="nav navbar-nav navbar-right">
         <li><a href="#"><span class="glyphicon glyphicon-user"></span> Settings</a></li>
-        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+        <li><%= link_to "Login", new_user_session_path %></li>
+        <li><%= link_to "Logout", destroy_user_session_path, :method => :delete %></li>
       </ul>
     </div>
   </div>

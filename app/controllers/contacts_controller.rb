@@ -4,7 +4,10 @@ class ContactsController < ApplicationController
 
   def index
     @contacts = Contact.where(belong: current_user.id)
-    @contacts = Contact.find(@contacts)
+    @all_contacts = []
+    @contacts.each do |e|
+      @all_contacts << User.find(e)
+    end
   end
 
   def new
