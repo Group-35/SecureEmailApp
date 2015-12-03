@@ -1,6 +1,7 @@
 <p>Contacts: </p><br>
 <% @all_contacts.each do |e| %>
   <%= "Name: #{e.firstname} #{e.lastname} \t Username: #{e.username}" %>
+  <%= link_to "Remove from contacts", "/contacts/#{e.id}", :method => :delete , class: "btn btn-danger" %>
   <br>
 <% end %>
 

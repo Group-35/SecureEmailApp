@@ -3,7 +3,7 @@
 <p>Your Blacklisted Users: </p><br>
 <% @blacklisted_contacts.each do |e| %>
   <%= "Name: #{e.firstname} #{e.lastname} \t Username: #{e.username}" %>
-  <%= link_to "Remove from Blacklist", "/spam/#{e.id}", :method => :delete , class: "btn btn-primary" %>
+  <%= link_to "Remove from Blacklist", "/spam/#{e.id}", :method => :delete , class: "btn btn-danger" %>
   <br>
 <% end %>
 

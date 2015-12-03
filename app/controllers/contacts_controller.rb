@@ -21,4 +21,14 @@ class ContactsController < ApplicationController
     redirect_to :controller => 'home', :action => 'index'
   end
 
+  def destroy
+      user = User.find(params[:id])
+      contact = Contact.find_by(contact: user.id)
+
+      Contact.destroy(contact.id)
+
+      redirect_to :controller => 'contacts', :action => 'index'
+
+    end
+
 end

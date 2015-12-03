@@ -18,7 +18,7 @@ class SpamController < ApplicationController
 	    new_contact = User.find_by(username: params[:spam][:bad_user])
 	    puts new_contact.id
 	    Spam.create(belong_to: current_user.id, bad_user: new_contact.id)
-	    redirect_to :controller => 'home', :action => 'index'
+	    redirect_to :controller => 'spam', :action => 'index'
 	  end
 
 	  def destroy
