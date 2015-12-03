@@ -21,7 +21,7 @@
                     <tr class="success">
                   <% end %>
                   <% @from_user = User.find(e.from_user) %>
-                  <td><%= "#{@from_user.firstname} #{@from_user.lastname}" %></td>  <td><%= link_to e.created_at || "blank", "/emails/show/#{e.id}" %></td> 
+                  <td><%= "#{@from_user.firstname} #{@from_user.lastname}" %></td>  <td><%= link_to e.created_at || "No Date", "/emails/show/#{e.id}" %></td> 
              
                 </tr>
             
