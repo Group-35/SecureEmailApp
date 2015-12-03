@@ -101,16 +101,14 @@ padding-top:15%;
     <div class="col-md-9" style="height:1000px;width:750px;font:16px/26px Georgia, Garamond, Serif;overflow:auto;">
     
 
-v=e
+
   emails: 
   <% if @emails.nil? %>
     "No email selected!"
   <% else %>
     
       
-        <p><%= v.data %></p>
-    
-    <% end %>
+        <p><%= @emails.first.data %></p>
 
 <% end %>
 
