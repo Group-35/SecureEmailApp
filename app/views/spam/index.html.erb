@@ -1,0 +1,10 @@
+<%= link_to "Add a User to Blacklist", new_spam_path , class: "btn btn-primary" %><br><br>
+
+<p>Your Blacklisted Users: </p><br>
+<% @blacklisted_contacts.each do |e| %>
+  <%= "Name: #{e.firstname} #{e.lastname} \t Username: #{e.username}" %>
+  <%= link_to "Remove from Blacklist", "/spam/#{e.id}", :method => :delete , class: "btn btn-primary" %>
+  <br>
+<% end %>
+
+<br style="margin-bottom: 20px;">

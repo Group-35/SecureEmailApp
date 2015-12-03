@@ -1,0 +1,10 @@
+<%= form_for @spam, url: { action: "create" } do |f| %>
+
+  <div class="field">
+    <%= f.label "Blacklisted (username)" %><br />
+    <%= f.text_field :bad_user %>
+  </div>
+
+  <%= f.submit "Send" %>
+
+<% end %>
