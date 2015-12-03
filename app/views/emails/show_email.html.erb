@@ -27,6 +27,10 @@
       var encoded_message = document.frm.msg.value;
       //console.log($('#email_data').text());
 
+      //Parse leading spaces
+      console.log(encoded_message.slice(2,encoded_message.length));
+      encoded_message = encoded_message.slice(2,encoded_message.length);
+
       doDecrypt(pk, qk, dk, uk, privKey, '');
 
       document.frm.msg.value = doDecrypt(pk, qk, dk, uk, encoded_message, '');
@@ -41,4 +45,4 @@ Message: <br>
 </textarea><br>
 </form>
 
-<button onClick="javascript:decrypt();" id="encrypt">Decrypt</button>
+<button onClick="javascript:decrypt();" id="decrypt">Decrypt</button>
