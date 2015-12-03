@@ -6,7 +6,7 @@ class ContactsController < ApplicationController
     @contacts = Contact.where(belong: current_user.id)
     @all_contacts = []
     @contacts.each do |e|
-      @all_contacts << User.find(e)
+      @all_contacts << User.find(e.contact)
     end
   end
 

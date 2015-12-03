@@ -1,6 +1,7 @@
 <p>Contacts: </p><br>
 <% @all_contacts.each do |e| %>
-  <%= "#{e.firstname} #{e.lastname}" %>
+  <%= "Name: #{e.firstname} #{e.lastname} \t Username: #{e.username}" %>
+  <br>
 <% end %>
 
 <br style="margin-bottom: 20px;">

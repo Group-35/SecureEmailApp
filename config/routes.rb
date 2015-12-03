@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   devise_for :users
   root 'home#index'
 
+  get "emails/:id" => 'emails#show'
+
   get "emails/spam" => 'emails#show_spam'
   get "emails/spam/new" => 'email#new_spam'
 
