@@ -1,3 +1,7 @@
+<p>Contacts: </p><br>
 <% @all_contacts.each do |e| %>
   <%= "#{e.firstname} #{e.lastname}" %>
 <% end %>
+
+<br style="margin-bottom: 20px;">
+<%= link_to "Add contact", new_contact_path , class: "btn btn-primary" %>

@@ -19,7 +19,7 @@
           "No emails!"
 
           <% else %>
-              <% @emails.sort_by { |h| h[:updated_at] } %>
+              <%# @emails.sort_by { |h| h[:updated_at] } %>
               <% @emails.each do |e| %>
               <tr>
                 <td><%=e.from_user%></td>  <td><%= e.created_at %></td>
