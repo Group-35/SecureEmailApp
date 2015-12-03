@@ -1,7 +1,31 @@
-<div class="row pull-right">
+<!-- <div class="row pull-right">
   <ul>
-    <li><%= link_to "Home", root_path %></li>
-    <% if !user_signed_in? %><%= link_to "Sign In", new_user_session_path %>
-    <% else %><%= link_to "Sign Out", destroy_user_session_path, :method => :delete %><% end %>
+    <li><%=# link_to "Home", root_path %></li>
+    <%# if !user_signed_in? %><%=# link_to "Sign In", new_user_session_path %>
+    <%# else %><%=# link_to "Sign Out", destroy_user_session_path, :method => :delete %><%# end %>
   </ul>
-</div>
+</div> -->
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Securemail</a>
+    </div>
+    <div>
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="/emails/contacts">Contacts</a></li>
+        <li><a href="/emails/spam">Spam</a></li>
+        <li><a href="/emails/new">Compose Message</a></li> 
+        
+      </ul>
+       <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Settings</a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
