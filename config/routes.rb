@@ -5,11 +5,9 @@ Rails.application.routes.draw do
 
   get "emails/:id" => 'emails#show'
 
-  get "emails/spam" => 'emails#show_spam'
-  get "emails/spam/new" => 'email#new_spam'
-
   resources :emails
   resources :contacts
+  resources :spam
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -18,13 +18,5 @@ class EmailsController < ApplicationController
     emails = Email.where(to_user: current_user.id)
     @email = emails.first
   end
-
-  def show_spam
-    render 'spam'
-  end
-
-  def new_spam
-    render 'new_spam'
-  end
   
 end
