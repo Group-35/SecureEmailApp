@@ -19,23 +19,11 @@
           "No emails!"
 
           <% else %>
-            <% if @emails.count == 1 %>
-              <tr>
-                <% if @emails.read == 1 %>
-                  <tr class="success">
-                  <% else %>
-                  <tr class="danger">
-                  <% end %>
-                <td><%=emails.from_user%></td>  <td><%= emails.created_at %></td>
-              </tr>
-            <% else %>
               <% @emails.reverse %>
               <% @emails.each do |e| %>
               <tr>
                 <td><%=e.from_user%></td>  <td><%= e.created_at %></td>
               </tr>
-              <% end %>
-            <% end %>
           <% end %>
       </tbody>
     </table>
