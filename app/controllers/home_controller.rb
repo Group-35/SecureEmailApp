@@ -22,6 +22,16 @@ class HomeController < ApplicationController
       @emails.delete(b)
     end
 
+    if params[:sort] != nil
+      if params[:sort] == "true" 
+        @emails = @emails.reverse
+        @sorted = true
+        @was_sorted = false
+      end
+    else
+      @was_sorted = true
+    end
+
   end
   
 end

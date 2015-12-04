@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root 'home#index'
 
   get "emails/show/:id" => 'emails#show_email'
+  get "home/index/:sort" => 'home#index'
 
   resources :emails
   resources :contacts

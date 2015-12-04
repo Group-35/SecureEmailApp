@@ -21,7 +21,12 @@
           "No emails!"
 
           <% else %>
-              <% @emails = @emails.reverse %>
+              <% if @was_sorted == true %>
+                <% sort = true %>
+              <% else %>
+                <% was_sorted = false %>
+              <% end %>
+              <%= link_to "Sort by Date", {:controller => "home", :action => "index", :sort => sort }, class: "btn-primary btn" %>
               <% @emails.each do |e| %>
                 <tr>
                   <% if e.read ==1 %>
@@ -42,5 +47,5 @@
   <div class="col-md-3">
 </div>
 
-<% #dont delete from db, sort emails, decrypt stuff working, add exceptions, adding keys to database, drafts? %>
+<% #add exceptions, adding keys to database, drafts? %>
        
